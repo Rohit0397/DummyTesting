@@ -63,7 +63,7 @@ public class DummyWebsite {
       WebElement ssNumber = driver.findElement(By.xpath("//*[@id=\"customer.ssn\"]"));
       ssNumber.sendKeys("AAA-GG-SSSS");
       
-      // Generate a dynamic username using timestamp
+      // Generate a dynamic user_name using time_stamp
       String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
       String dynamicUsername = "user_" + timestamp;
       
