@@ -32,7 +32,7 @@ public class DummyWebsite {
     }
      
   @Test(priority=0)
-  public void registrationProcess() throws InterruptedException {
+  public void registrationProcess() throws InterruptedException, IOException {
       
       WebElement register = driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a"));
       register.click();
@@ -62,13 +62,17 @@ public class DummyWebsite {
       ssNumber.sendKeys("AAA-GG-SSSS");
       
       WebElement userName = driver.findElement(By.xpath("//*[@id=\"customer.username\"]"));
-      userName.sendKeys("Rohit1197");
+      userName.sendKeys("Rohit2097");
       
       WebElement password = driver.findElement(By.xpath("//*[@id=\"customer.password\"]"));
       password.sendKeys("12345678");
       
       WebElement confirmPassword = driver.findElement(By.xpath("//*[@id=\"repeatedPassword\"]"));
       confirmPassword.sendKeys("12345678");
+      Thread.sleep(2000);
+      
+      // After completing the Confirm Password process, take the screenshot
+      takeScreenshot();  // This is where the screenshot is taken after Confirm Password
       
       WebElement submit = driver.findElement(By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input"));
       submit.click();
@@ -77,7 +81,7 @@ public class DummyWebsite {
       logout.click();
   }
   @Test(priority=1)
-	  public void takeScreenshot(WebDriver driver, String fileName) throws IOException {
+	  public void takeScreenshot() throws IOException {
 	      // Convert WebDriver instance to TakesScreenshot
 	      TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
 	
@@ -85,7 +89,7 @@ public class DummyWebsite {
 	      File screenshot = screenshotDriver.getScreenshotAs(OutputType.FILE);
 	
 	      // Define the destination file location
-	      File destinationFile = new File("C:/Users/26324/Desktop/Cashpor Documents/Testing Documents/screenshot1.png");
+	      File destinationFile = new File("C:/Users/26324/Desktop/Cashpor Documents/Testing Documents/screenshot5.png");
 	
 	      // Copy the screenshot to the destination file
 	      FileUtils.copyFile(screenshot, destinationFile);
@@ -97,7 +101,7 @@ public class DummyWebsite {
   public void loginProcess() {
 	  
 	  WebElement userName1 = driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[1]/input"));
-	  userName1.sendKeys("Rohit1197");
+	  userName1.sendKeys("Rohit2097");
       
       WebElement password1 = driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[2]/input"));
       password1.sendKeys("12345678");
