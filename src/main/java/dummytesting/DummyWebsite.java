@@ -2,6 +2,8 @@ package dummytesting;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -61,8 +63,12 @@ public class DummyWebsite {
       WebElement ssNumber = driver.findElement(By.xpath("//*[@id=\"customer.ssn\"]"));
       ssNumber.sendKeys("AAA-GG-SSSS");
       
+      // Generate a dynamic username using timestamp
+      String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+      String dynamicUsername = "user_" + timestamp;
+      
       WebElement userName = driver.findElement(By.xpath("//*[@id=\"customer.username\"]"));
-      userName.sendKeys("Rohit2097");
+      userName.sendKeys(dynamicUsername);
       
       WebElement password = driver.findElement(By.xpath("//*[@id=\"customer.password\"]"));
       password.sendKeys("12345678");
