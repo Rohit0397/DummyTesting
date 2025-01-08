@@ -95,7 +95,7 @@ public class DummyWebsite {
 	      File screenshot = screenshotDriver.getScreenshotAs(OutputType.FILE);
 	
 	      // Define the destination file location
-	      File destinationFile = new File("C:/Users/26324/Desktop/Cashpor Documents/Testing Documents/screenshot5.png");
+	      File destinationFile = new File("C:/Users/26324/Desktop/Cashpor Documents/Testing Documents/screenshot6.png");
 	
 	      // Copy the screenshot to the destination file
 	      FileUtils.copyFile(screenshot, destinationFile);
